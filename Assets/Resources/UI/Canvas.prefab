@@ -75,6 +75,8 @@ GameObject:
   - component: {fileID: 224020901263003514}
   - component: {fileID: 222218843630891498}
   - component: {fileID: 114570726811843874}
+  - component: {fileID: 114329129898569106}
+  - component: {fileID: 114062837353696470}
   m_Layer: 5
   m_Name: EnergyCreditsText
   m_TagString: Untagged
@@ -162,8 +164,6 @@ GameObject:
   - component: {fileID: 114177124514746232}
   - component: {fileID: 114404359084661658}
   - component: {fileID: 114577188315660868}
-  - component: {fileID: 114447627212697570}
-  - component: {fileID: 114282882795032188}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -213,6 +213,8 @@ GameObject:
   - component: {fileID: 224855101054385566}
   - component: {fileID: 222740388641565422}
   - component: {fileID: 114274081638986990}
+  - component: {fileID: 114029786064496532}
+  - component: {fileID: 114729500090783646}
   m_Layer: 5
   m_Name: CounterText
   m_TagString: Untagged
@@ -318,6 +320,8 @@ GameObject:
   - component: {fileID: 224492448006185290}
   - component: {fileID: 222438031181216922}
   - component: {fileID: 114564152353314460}
+  - component: {fileID: 114882732142584048}
+  - component: {fileID: 114207883582725980}
   m_Layer: 5
   m_Name: FoodText
   m_TagString: Untagged
@@ -720,6 +724,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114029786064496532
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1629876307974566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10ff8ed5bc6d4aada97f73e2c0696db4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedData:
+    CurrentTime: 0
+    year: 2020
+    month: 1
+    day: 1
+--- !u!114 &114062837353696470
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1315342675180284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0ac6fbbf6284bcd93eddf9c72603e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedData:
+    GameResourceType: 1
+    Amount: 2
+    Generation: 0.3
 --- !u!114 &114064039506128466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -942,6 +977,21 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114207883582725980
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1981423030025002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0ac6fbbf6284bcd93eddf9c72603e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedData:
+    GameResourceType: 0
+    Amount: 1
+    Generation: 0.5
 --- !u!114 &114223589444513558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1044,25 +1094,6 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: DAY/MONTH/YEAR
---- !u!114 &114282882795032188
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1465731341545480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64462bd3ed9cc44c997c55337e2487cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseData: 0
-  hud: {fileID: 0}
-  Food: 1
-  EnergyCredits: 2
-  Research: 3
-  FoodGeneration: 1
-  EnergyCreditsGeneration: 2
-  ResearchGeneration: 3
 --- !u!114 &114294125856280322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1093,6 +1124,17 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Ricimi.BasicButton+ButtonClickedEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114329129898569106
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1315342675180284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114363774039558284
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1152,17 +1194,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Ricimi.BasicButton+ButtonClickedEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114447627212697570
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1465731341545480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114564152353314460
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1314,6 +1345,17 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Ricimi.BasicButton+ButtonClickedEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114729500090783646
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1629876307974566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114796307657967362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1347,6 +1389,17 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: (0)
+--- !u!114 &114882732142584048
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1981423030025002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114976779259187818
 MonoBehaviour:
   m_ObjectHideFlags: 1

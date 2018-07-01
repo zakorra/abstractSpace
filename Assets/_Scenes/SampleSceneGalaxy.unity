@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 17650508}
   - component: {fileID: 17650507}
   - component: {fileID: 17650509}
+  - component: {fileID: 17650510}
   m_Layer: 0
   m_Name: _GameManager
   m_TagString: Untagged
@@ -162,13 +163,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ui: {fileID: 1465731341545480, guid: b9e71adccd7dd44e2a06888a9a559770, type: 2}
-  TimeCounterText: {fileID: 0}
-  FoodText: {fileID: 0}
-  EnergyCreditsText: {fileID: 0}
-  ResearchText: {fileID: 0}
-  FoodGenerationText: {fileID: 0}
-  EnergyCreditsGenerationText: {fileID: 0}
-  ResearchGenerationText: {fileID: 0}
+--- !u!114 &17650510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 17650506}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c1cac102d5b4d69a4c7d22aa5f3cb9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ResourceCanvas: {fileID: 1465731341545480, guid: b9e71adccd7dd44e2a06888a9a559770,
+    type: 2}
 --- !u!1 &28049494
 GameObject:
   m_ObjectHideFlags: 0

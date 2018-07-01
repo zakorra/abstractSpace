@@ -1,18 +1,15 @@
-﻿using UnityEngine;
+﻿using System;
+using Unity.Entities;
 
 namespace _Scripts.entities
 {
-    public class GameResourceEntity : MonoBehaviour
+    [Serializable]
+    public struct GameResourceData : IComponentData
     {
-        public bool UseData;
-        public GameObject hud;
-        public int Food;
-        public int EnergyCredits;
-        public int Research;
-		
-        public int FoodGeneration;
-        public int EnergyCreditsGeneration;
-        public int ResearchGeneration;
+        public GameResourceType GameResourceType;
+        public float Amount;
+        public float Generation;
     }
 
+    public class GameResourceEntity : ComponentDataWrapper<GameResourceData> {}
 }

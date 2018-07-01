@@ -5,84 +5,53 @@ using Unity.Entities;
 using UnityEngine;
 using UnityEngine.UI;
 using Unity.Entities;
+using Unity.Jobs;
+using Unity.Transforms;
 using _Scripts.entities;
 
 namespace _Scripts.systems
 {
-    public class GameResourcesSystem : ComponentSystem
+    public class GameResourcesSystem : JobComponentSystem
     {
-        private Text CurrentDateText;
-		
-        private Text FoodText;
-        private Text EnergyCreditsText;
-        private Text ResearchText;
-	
-        private Text FoodGenerationText;
-        private Text EnergyCreditsGenerationText;
-        private Text ResearchGenerationText;
-        
-        private DateTime _myDate;
-        private float _currentTime;
-
-        public event EventHandler NewMonth;
-
-        private struct GameResourceComponent
+        struct GameResourceJob : IJobProcessComponentData<GameResourceData, GameTimeData>
         {
-            public GameResourceEntity GameResourceEntity;
+            public float deltaTime;
+            public float timeScale;
+            
+            public void Execute(ref GameResourceData gameResourceData, ref GameTimeData gameTimeData)
+            {
+                //CalculateTimeAndFireEvent(data, deltaTime, timeScale);
+                gameResourceData.Amount++;
+            }
+
+        }
+
+        protected override JobHandle OnUpdate(JobHandle inputDeps)
+        {
+            GameResourceJob gameResourceJob = new GameResourceJob
+            {
+                deltaTime = Time.deltaTime,
+                timeScale = Time.timeScale
+            };
+
+            JobHandle jobHandle = gameResourceJob.Schedule(this, 64, inputDeps);
+            return jobHandle;
+        }
+
+        protected override void OnCreateManager(int capacity)
+        {
+            base.OnCreateManager(capacity);
         }
 
         protected override void OnStartRunning()
         {
             base.OnStartRunning();
-        
-            CurrentDateText = GameObject.Find("CounterText").GetComponent<Text>();
-            
-            FoodText = GameObject.Find("FoodText").GetComponent<Text>();
-            EnergyCreditsText = GameObject.Find("EnergyCreditsText").GetComponent<Text>();
-            ResearchText = GameObject.Find("ResearchText").GetComponent<Text>();
-		
-            FoodGenerationText = GameObject.Find("FoodGenerationText").GetComponent<Text>();
-            EnergyCreditsGenerationText = GameObject.Find("EnergyCreditsGenerationText").GetComponent<Text>();
-            ResearchGenerationText = GameObject.Find("ResearchGenerationText").GetComponent<Text>();
-            
-            _myDate = new DateTime(2300, 01, 01);
-            _currentTime = 0;
-
-            CurrentDateText.text = GetTime();
-        }
-
-        protected override void OnUpdate()
-        {
-            CalculateTimeAndFireEvent();
-        }
-
-        private void CalculateTimeAndFireEvent()
-        {
-            _currentTime += Time.deltaTime * Time.timeScale;
-            
-            if (_currentTime > 1)
-            {
-                var oldMonth = _myDate.Month;
-                _myDate = _myDate.AddDays(1);
-
-                if (oldMonth != _myDate.Month)
-                {
-                    OnNewMonth(new EventArgs());
-                }
-                _currentTime--;
-                
-                CurrentDateText.text = GetTime();
-            }
-        }
-        
-        protected virtual void OnNewMonth(EventArgs e)
-        {
-            UpdateResource();
         }
         
         
-        private void UpdateResource ()
+        private void UpdateResource (GameResourceData data)
         {
+            /*
             foreach (var entity in GetEntities<GameResourceComponent>())
             {
                 FoodText.text = "" + FormatRessource(entity.GameResourceEntity.Food);
@@ -93,22 +62,7 @@ namespace _Scripts.systems
                 entity.GameResourceEntity.EnergyCredits += entity.GameResourceEntity.EnergyCreditsGeneration;   
                 entity.GameResourceEntity.Research += entity.GameResourceEntity.ResearchGeneration;   
             }
+            */
         }
-        
-        private string GetTime()
-        {
-            return _myDate.ToString("d");
-        }
-        
-        private string FormatRessource(int res)
-        {
-            string prefix = "";
-            if (res > 0)
-                prefix = "+";
-
-            return " (" + prefix + res.ToString() + ")";
-        }
-
-        
     }
 }
