@@ -103,7 +103,7 @@ namespace _Scripts.systems
         
         private string FormatTime(GameTimeData dateTime)
         {
-            DateTime date = new DateTime(dateTime.year, dateTime.month, dateTime.day).AddHours(dateTime.CurrentTime);
+            DateTime date = new DateTime(dateTime.year, dateTime.month, dateTime.day).AddDays(dateTime.CurrentTime);
             return date.ToString("d");
         }
     }

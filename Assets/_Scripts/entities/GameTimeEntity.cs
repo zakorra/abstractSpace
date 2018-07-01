@@ -7,6 +7,7 @@ namespace _Scripts.entities
     public struct GameTimeData : IComponentData
     {
         public float CurrentTime;
+        public float TimeSpeed;
         
         public int year;
         public int month;
