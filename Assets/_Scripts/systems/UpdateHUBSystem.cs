@@ -47,13 +47,13 @@ namespace _Scripts.systems
                 switch (_gameResourceData.gameResourceDate[i].GameResourceType)
                 {
                     case GameResourceType.FOOD:
-                        FoodText.text = FormatRessource(_gameResourceData.gameResourceDate[i].Amount);
+                        FoodText.text = FormatRessource(_gameResourceData.gameResourceDate[i]);
                         break;
                     case GameResourceType.ENERGY:
-                        EnergyCreditsText.text = FormatRessource(_gameResourceData.gameResourceDate[i].Amount);
+                        EnergyCreditsText.text = FormatRessource(_gameResourceData.gameResourceDate[i]);
                         break;
                     case GameResourceType.RESEARCH:
-                        ResearchText.text = FormatRessource(_gameResourceData.gameResourceDate[i].Amount);
+                        ResearchText.text = FormatRessource(_gameResourceData.gameResourceDate[i]);
                         break;
                     default:
                         break;
@@ -78,27 +78,19 @@ namespace _Scripts.systems
             EnergyCreditsText = GameObject.Find("EnergyCreditsText").GetComponent<Text>();
             ResearchText = GameObject.Find("ResearchText").GetComponent<Text>();
 		
-            FoodGenerationText = GameObject.Find("FoodGenerationText").GetComponent<Text>();
-            EnergyCreditsGenerationText = GameObject.Find("EnergyCreditsGenerationText").GetComponent<Text>();
-            ResearchGenerationText = GameObject.Find("ResearchGenerationText").GetComponent<Text>();
+            //FoodGenerationText = GameObject.Find("FoodGenerationText").GetComponent<Text>();
+            //EnergyCreditsGenerationText = GameObject.Find("EnergyCreditsGenerationText").GetComponent<Text>();
+            //ResearchGenerationText = GameObject.Find("ResearchGenerationText").GetComponent<Text>();
         }
 
-        private string FormatRessource(int res)
+        private string FormatRessource(GameResourceData data)
         {
             string prefix = "";
-            if (res > 0)
+            if (data.Amount > 0)
                 prefix = "+";
 
-            return " (" + prefix + res.ToString() + ")";
-        }
-
-        private string FormatRessource(float res)
-        {
-            string prefix = "";
-            if (res > 0)
-                prefix = "+";
-
-            return " (" + prefix + res.ToString() + ")";
+            //return  String.Format(" ( +" + prefix + "{0,0} + ", res);
+            return  " " + prefix + data.Amount.ToString("N0") + " (" + data.Generation.ToString("N2") + ")";
         }
         
         private string FormatTime(GameTimeData dateTime)

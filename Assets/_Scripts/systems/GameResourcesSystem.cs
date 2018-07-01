@@ -13,15 +13,15 @@ namespace _Scripts.systems
 {
     public class GameResourcesSystem : JobComponentSystem
     {
-        struct GameResourceJob : IJobProcessComponentData<GameResourceData, GameTimeData>
+        struct GameResourceJob : IJobProcessComponentData<GameResourceData>
         {
             public float deltaTime;
             public float timeScale;
             
-            public void Execute(ref GameResourceData gameResourceData, ref GameTimeData gameTimeData)
+            public void Execute(ref GameResourceData gameResourceData)
             {
                 //CalculateTimeAndFireEvent(data, deltaTime, timeScale);
-                gameResourceData.Amount++;
+                gameResourceData.Amount += gameResourceData.Generation * deltaTime * timeScale;
             }
 
         }
