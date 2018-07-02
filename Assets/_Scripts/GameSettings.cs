@@ -14,7 +14,14 @@ namespace _Scripts
     
     public class GameSettings : MonoBehaviour
     {
-        public GalaxySizeType GalaxySizeType; 
-        public Planets[] PlanetList;
+        public GalaxySizeType GalaxySizeType;
+        public GalaxyShapeType GalaxyShapeType;
+        public ColonizablePlanetOddsType ColonizablePlanetOddsType;
+        public SystemDistanceSizeType SystemDistanceSizeType;
+        public HyperlaneCountType HyperlaneCountType;
+        public CoreRessourceCountType CoreRessourceCountType;
+        public ProgressiveRessourceCountType ProgressiveRessourceCountType;
+        // public Planets[] PlanetList;
+
     }
 }
