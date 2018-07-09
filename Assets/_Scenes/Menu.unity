@@ -113,6 +113,53 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &16567648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 16567650}
+  - component: {fileID: 16567649}
+  m_Layer: 0
+  m_Name: GameSettings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &16567649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 16567648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0253d4b3195a4025be9ed578086d8e82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GalaxySizeType: 0
+  GalaxyShapeType: 0
+  ColonizablePlanetOddsType: 0
+  SystemDistanceSizeType: 0
+  HyperlaneCountType: 0
+  CoreRessourceCountType: 0
+  ProgressiveRessourceCountType: 0
+--- !u!4 &16567650
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 16567648}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &41772105
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,10 +433,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1440046590192662, guid: fa958b57fd22340c3a4b40d6eb648685, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 114010907641694412, guid: fa958b57fd22340c3a4b40d6eb648685,
+        type: 2}
+      propertyPath: GameSettings
+      value: 
+      objectReference: {fileID: 16567649}
     - target: {fileID: 224427759017587890, guid: fa958b57fd22340c3a4b40d6eb648685,
         type: 2}
       propertyPath: m_AnchorMin.y
@@ -2395,53 +2443,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1648387260}
---- !u!114 &1675583075 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114252748138381304, guid: fa958b57fd22340c3a4b40d6eb648685,
-    type: 2}
-  m_PrefabInternal: {fileID: 316467676}
-  m_Script: {fileID: 853051423, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!1 &2018319503
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 2018319505}
-  - component: {fileID: 2018319504}
-  m_Layer: 0
-  m_Name: CreateGameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2018319504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2018319503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93d8e7ff66e601c4b8ae71e86462b4a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dropdownGalaxySize: {fileID: 1675583075}
---- !u!4 &2018319505
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2018319503}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2046290127
 GameObject:
   m_ObjectHideFlags: 0

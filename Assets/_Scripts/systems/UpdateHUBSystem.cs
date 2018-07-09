@@ -8,7 +8,7 @@ using _Scripts.entities;
 
 namespace _Scripts.systems
 {
-    [AlwaysUpdateSystem]
+    // [AlwaysUpdateSystem]
     public class UpdateHUBSystem : ComponentSystem
     {
         public struct ResourceData

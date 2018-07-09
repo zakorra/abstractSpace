@@ -967,6 +967,7 @@ GameObject:
   - component: {fileID: 114657472156161126}
   - component: {fileID: 95708339674688088}
   - component: {fileID: 225662158878344532}
+  - component: {fileID: 114010907641694412}
   m_Layer: 5
   m_Name: CreateGame
   m_TagString: Untagged
@@ -1431,6 +1432,22 @@ GameObject:
   - component: {fileID: 114490350580624440}
   m_Layer: 5
   m_Name: Label
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1724296385006180
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4299499390016138}
+  - component: {fileID: 114261666864875094}
+  m_Layer: 0
+  m_Name: CreateGameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2151,6 +2168,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4299499390016138
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1724296385006180}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224726256610842062}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &82727698660387586
 AudioSource:
   m_ObjectHideFlags: 1
@@ -2392,6 +2422,21 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Size1
+--- !u!114 &114010907641694412
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1440046590192662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d8e7ff66e601c4b8ae71e86462b4a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NewGameButton: {fileID: 114558279690658664}
+  dropdownGalaxySize: {fileID: 114252748138381304}
+  dropdownGalaxyShape: {fileID: 114490596308780746}
+  GameSettings: {fileID: 0}
 --- !u!114 &114015993380799544
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3044,6 +3089,21 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Dropdown+DropdownEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114261666864875094
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1724296385006180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d8e7ff66e601c4b8ae71e86462b4a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NewGameButton: {fileID: 114558279690658664}
+  dropdownGalaxySize: {fileID: 114252748138381304}
+  dropdownGalaxyShape: {fileID: 114490596308780746}
+  GameSettings: {fileID: 0}
 --- !u!114 &114262838160764696
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8782,6 +8842,7 @@ RectTransform:
   - {fileID: 224585174430492712}
   - {fileID: 224501517994743024}
   - {fileID: 224040820562972136}
+  - {fileID: 4299499390016138}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

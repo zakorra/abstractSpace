@@ -6,7 +6,7 @@ namespace _Scripts.systems
     {
         protected override void OnUpdate()
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }
